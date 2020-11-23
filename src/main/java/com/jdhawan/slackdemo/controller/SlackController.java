@@ -24,9 +24,7 @@ public class SlackController {
                                                @RequestParam("text") String text,
                                                @RequestParam("response_url") String responseUrl) {
         SlackResponse response = new SlackResponse();
-        response.setText("This is the response text");
-        response.setResponseType("in_channel"
-        		+ "team id: " +teamId+
+        response.setText("This is the response text"+ "team id: " +teamId+
         		"domain : "+teamDomain+
         		"c id:"+ channelId+
         		" c name: "+channelName+
@@ -35,6 +33,8 @@ public class SlackController {
         		"com:"+command+
         		"text:"+text+
         		"rurl:"+responseUrl);
+        
+        response.setResponseType("in_channel");
         
         
         Attachement attachment = new Attachement();
